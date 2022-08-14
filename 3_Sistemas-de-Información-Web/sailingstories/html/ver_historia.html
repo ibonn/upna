@@ -1,0 +1,163 @@
+<!-- TinyMCE -->
+<script src="https://cdn.tiny.cloud/1/l2lj09twf57mus8zravwx7wiibiw9j31qjp4elazshgq9bg0/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script defer src="js/init.js"></script>
+<script src="js/dropzone.js"></script>
+<script src="js/jquery.rateyo.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/dropzone.css">
+<link rel="stylesheet" href="css/galeria.css" type="text/css">
+<link rel="stylesheet" href="css/subir_imagen.css" type="text/css">
+<!-- Content Header (Page header) -->
+<div class="content-header">
+  <div class="container">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">##titulo##</h1>
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <a href="ver_pdf.php?id=##id##" class="btn btn-primary float-right" style="margin-right: 5px;">
+          <i class="fas fa-download"></i> Descargar en PDF
+        </a>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+    <div class="row mb-2">
+      <div class="col-sm-12">
+        <div id="valoracion_estrellas">
+          <div id="estrellas" data-valor="##valoracion_usuario##"></div>
+        </div>
+        <p>Valoración de la comunidad: ##valoracion_media##</p>
+      </div>
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+  <div class="container">
+    <div id="visor_fotos">
+      <script>
+          /* 
+              fotos es un array con un diccionario por cada foto. En cada clave-valor del diccionario
+              se guarda el nombre de la imagen sin extensión (al que se le añadirá al final un sufijo en funcion del tamaño)
+              así como la descripción de la imagen y el nombre del usuario que la ha subido.
+              
+              Cambiando únicamente el contenido de este array se cambian las fotos que aparecen en la galería.
+          */
+    
+          var fotos = ##array_fotos##;
+    
+          // Carga las imágenes pequeñas
+          $(document).ready(function() {
+              fotos.forEach(function(foto, i) {
+                  $('#navegador_peq div').append('<img src="uploads/' + foto['nombre'] + '_peq.jpg" alt="' + foto['descripcion'] + '" data-nombre="' + foto['nombre'] + '" data-indice="' + i + '" class="peq clickable" />');
+              });
+          });
+      </script>
+      <!-- Carga toda la funcionalidad de la galería -->
+      <script defer src="js/galeria.js"></script>
+      
+      <!-- Pequeñas y mediana. Al pinchar pequeña, se carga en la mediana. Al pinchar en la mediana se abre en grande. -->
+      <div id="navegador_peq">
+          <img src="" alt="" class="med clickable" id="visor_mediano" />
+          <p></p>
+          <div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<div class="content">
+  <div class="container">
+    ##bloque capitulo##
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">##titulo_capitulo## - ##autor##</h5>
+        <p class="card-text">
+          ##texto_capitulo##
+        </p>
+      </div>
+    </div>
+    ##bloque capitulo##
+    ##bloque registrado##
+    ##bloque votaciones##
+    <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">Vota tu capítulo favorito</h3>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-6">
+            ##columna1##
+          </div>
+          <div class="col-lg-6">            
+            ##columna2##
+          </div>
+        </div>       
+      </div>
+    </div>
+    ##bloque votaciones##    
+    <div id="escribir_capitulo" class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">Escribe el siguiente capítulo</h3>
+      </div>
+      <div class="card-body">
+        <form action="enviar_capitulo.php" method="POST">
+
+          <label for="titulo_capitulo">Título del capítulo</label>
+          <input type="text" class="form-control" id="titulo_capitulo" name="titulo_capitulo" placeholder="Introduce un título para tu propuesta de capítulo" autocomplete="off">
+        
+          <label for="editor_capitulo">Texto del capítulo</label>
+          <textarea id="editor_capitulo" name="texto_capitulo"></textarea>
+          <input type="hidden" name="id_historia" value="##id##">
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" name="es_capitulo_final" type="checkbox" id="check_es_capitulo_final">
+          <label for="check_es_capitulo_final" class="custom-control-label">Es el último capítulo (si este capítulo es elegido para formar parte de la historia, la historia pasará a estar finalizada)</label>
+          </div>
+          <input type="submit" class="btn btn-primary btn-sm" value="Enviar capítulo">
+          <input type="reset" class="btn btn-danger btn-sm" value="Reiniciar">
+        </form>
+      </div>
+    </div>
+    <div id="subir_imagenes" class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">Subir imágenes</h3>
+      </div>
+      <div class="card-body">
+        <form action="subir_imagen.php" method="POST" id="subirImagenes" class="dropzone">
+            <div class="dz-message" data-dz-message><span>Arrastra las imágenes aquí</span></div>
+            <input type="hidden" name="id_historia" value="##id##">
+        </form>
+        <input type="submit" id="boton_subir_imagenes" class="btn btn-primary btn-sm" value="Subir imágenes">
+      </div>
+    </div>
+    <script>
+      // Configuración de dropzone
+      Dropzone.autoDiscover = false;
+
+      var subirImagenes = new Dropzone(".dropzone", { 
+        autoProcessQueue: false,
+        acceptedFiles: ".jpeg,.jpg,.JPEG,.JPG",
+        previewTemplate: '<div class="dz-preview dz-file-preview"><div class="dz-image"><img data-dz-thumbnail /></div><div class="dz-details"><div class="dz-size"><span data-dz-size></span></div><div class="dz-filename"><span data-dz-name></span></div></div><div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div><div class="dz-error-message"><span data-dz-errormessage></span></div><input type="text" name="descripcion" class="form-control" placeholder="Añade una descripción (Opcional)"></div>'
+      });
+
+      $('#boton_subir_imagenes').click(function(){
+        subirImagenes.processQueue();
+      });
+      
+      // Configuración de TinyMCE
+      tinymce.init({
+        selector:"#editor_capitulo", 
+        entity_encoding: "raw"
+      });
+    </script>
+    ##bloque registrado##
+    <script>
+      // Configuración de RateYo!
+      $("#estrellas").rateYo({
+        rating: $("#estrellas").attr("data-valor"),
+        onSet: function(rating, rateYoInstance) {
+          $.post("ver_historia.php", { id: ##id##, estrellas: rating } );
+        }
+      });
+    </script>
+  </div><!-- /.container-fluid -->
+</div>
+<!-- /.content -->

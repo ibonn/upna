@@ -1,0 +1,87 @@
+<div class="content">
+  <div class="container">
+    <div class="callout callout-info">
+        <h5>Atención</h5>
+        <p>Eliminar un género modificará todas las historias de ese género pasando todas ellas a tener nulo como valor en el género</p>
+    </div>
+    <fieldset>
+      <legend>Gestionar géneros</legend>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Genero</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="fila">
+            <form>
+              <td><input type="text" id="nombre_nuevo_genero" name="genero" class="form-control" placeholder="Nombre del género"></td>
+              <td>
+                    <input type="submit" class="btn btn-success btn-sm boton_crear_genero" value="Crear género">
+              </td>
+            </form>
+          </tr>
+            ##bloque generos##
+            <tr>
+              <form>
+                <td><input type="text" name="genero" class="form-control" placeholder="Nombre del género" value="##nombre##" disabled></td>
+                <td>
+                      <input type="submit" class="btn btn-danger btn-sm boton_eliminar_genero" data-genero="##nombre##" value="Eliminar">
+                </td>
+              </form>
+            </tr>
+            ##bloque generos##
+        </tbody>
+      </table>
+    </fieldset>
+    <fieldset>
+      <legend>Gestionar supuestos</legend>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Género</th>
+            <th>Supuesto</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <form>
+              <td>
+                <select name="genero" class="form-control">
+                  ##bloque lista_generos##
+                  <option ##selected##>##nombre##</option>
+                  ##bloque lista_generos##
+                </select>
+              </td>
+              <td><textarea name="supuesto" id="nuevo_supuesto" class="form-control" placeholder="Introduce el supuesto"></textarea></td>
+              <td>
+                <input type="submit" class="btn btn-success btn-sm boton_crear_supuesto" value="Crear supuesto">
+              </td>
+            </form>
+          </tr>
+          ##bloque supuestos##
+          <tr class="fila">
+            <form>
+              <input type="hidden" name="id_supuesto" value="##id##">
+              <td>
+                <select name="genero" class="form-control">
+                  ##bloque lista_generos_sup##
+                  <option ##selected##>##nombre##</option>
+                  ##bloque lista_generos_sup##
+                </select>
+              </td>
+              <td><textarea name="supuesto" class="form-control">##supuesto##</textarea></td>
+              <td>
+                <input type="submit" class="btn btn-success btn-sm boton_modificar_supuesto" value="Modificar">
+                <input type="submit" class="btn btn-danger btn-sm boton_eliminar_supuesto" value="Eliminar">
+              </td>
+            </form>
+          </tr>
+          ##bloque supuestos##
+        </tbody>
+      </table>
+    </fieldset>
+  </div>
+</div>

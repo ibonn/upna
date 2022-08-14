@@ -1,0 +1,45 @@
+<div class="content">
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Contraseña</th>
+          <th>Repetir contraseña</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <form>
+            <td><input class="form-control" type="text" id="id_usuario_cu" placeholder="Nombre de usuario"></td>
+            <td><input class="form-control" type="email" id="correo_cu" placeholder="Dirección de correo electrónico"></td>
+            <td><input class="form-control" type="password" id="password_cu" placeholder="Contraseña"></td>
+            <td><input class="form-control" type="password" id="rep_password_cu" placeholder="Repetir contraseña"></td>
+            <td>
+                <input type="submit" class="btn btn-success btn-sm boton_crear_usuario" value="Crear usuario">
+                <input type="reset" class="btn btn-danger btn-sm" value="Vaciar campos">
+            </td>
+            </form>
+          </tr>
+          ##bloque usuarios##
+          <tr class="fila" data-id="##id##">
+            <form>
+              <td><input class="form-control" type="text" value="##id##" name="id_usuario" placeholder="Nombre de usuario" disabled></td>
+              <td><input class="form-control" type="email" value="##correo##" name="correo" placeholder="Dirección de correo electrónico"></td>
+              <td><input class="form-control" type="password" name="password" placeholder="Contraseña"></td>
+              <td><input class="form-control" type="password" name="rep_password" placeholder="Repetir ontraseña"></td>
+              <td>
+                <div data-id="##id##">
+                  <input type="submit" class="btn btn-success btn-sm boton_modificar_usuario" value="Guardar cambios">
+                  <input type="submit" class="btn btn-danger btn-sm boton_eliminar_usuario" value="Eliminar usuario">
+                </div>
+              </td>
+            </form>
+          </tr>
+          ##bloque usuarios##
+      </tbody>
+    </table>
+  </div>
+</div>

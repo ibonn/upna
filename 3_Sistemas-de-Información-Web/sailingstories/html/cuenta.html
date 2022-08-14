@@ -1,0 +1,68 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+  <div class="container">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">Configuración de la cuenta</h1>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title">Configuración general</h3>
+          </div>
+          <div class="card-body">
+            <form action="cuenta.php" method="POST">
+              <input type="hidden" name="accion" value="modificar_perfil">
+              <p><label for="nombre_usuario">Nombre de usuario</label><input type="text" class="form-control" value="##nombre_usuario##" placeholder="Nombre de usuario" id="nombre_usuario" disabled></p>
+              <p><label for="correo_usuario">Dirección de correo</label><input type="email" class="form-control" value="##correo_usuario##" name="correo" placeholder="Dirección de correo" id="correo_usuario"></p>
+              <input type="submit" class="btn btn-block btn-primary" value="Guardar cambios">
+            </form>
+          </div>
+        </div>
+        <div class="card card-secondary">
+          <div class="card-header">
+            <h3 class="card-title">Contraseña</h3>
+          </div>
+          <div class="card-body">
+            <form action="cuenta.php" method="POST">
+              <input type="hidden" name="accion" value="cambiar_contrasena">
+              <p><label for="password_actual">Contraseña actual</label><input type="password" class="form-control" placeholder="Introduce la contraseña actual" name="password_actual" id="password_actual"></p>
+              <p><label for="pessword_nueva">Nueva contraseña</label><input type="password" class="form-control" placeholder="Introduce la nueva contraseña" name="password_nueva" id="password_nueva"></p>
+              <p><label for="password_rep">Repetir nueva contraseña</label><input type="password" class="form-control" placeholder="Repite la nueva contraseña" name="password_rep" id="password_rep"></p>
+              <input type="submit" class="btn btn-block btn-primary" value="Cambiar contraseña">
+            </form>
+          </div>
+        </div>
+        <div class="card card-danger">
+          <div class="card-header">
+            <h3 class="card-title">Eliminar cuenta</h3>
+          </div>
+          <div class="card-body">
+            <div class="callout callout-danger">
+              <h5>¡Esta acción es irreversible!</h5>
+              <p>Si decides eliminar tu cuenta, todos los datos personales asociados a tu cuenta serán eliminados.</p>
+              <p>Los capítulos e historias que hayas escrito y las imágenes que hayas subido pasarán a tener como autor "anónimo". Si creas una nueva cuenta, no podrás recuperarlas.</p>
+            </div>
+            <form action="cuenta.php" method="POST">
+              <input type="hidden" name="accion" value="eliminar_cuenta">
+              <p><label for="password_actual">Contraseña actual</label><input type="password" class="form-control" placeholder="Introduce la contraseña" name="password" id="password_actual"></p>
+              <input type="submit" class="btn btn-block btn-danger" value="Eliminar cuenta">
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+<!-- /.content -->

@@ -1,0 +1,36 @@
+<div class="content">
+    <div class="container">
+        <div class="callout callout-info">
+            <h5>Atención</h5>
+            <p>Eliminar un capítulo puede causar que una historia pierda coherencia. Si el capítulo es inapropiado, considera modificarlo en lugar de eliminarlo.</p>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                <th>Título del capítulo</th>
+                <th>Autor</th>
+                <th>Texto</th>
+                <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                ##bloque capitulos##
+                <tr>
+                    <form>
+                        <input type="hidden" value="##id##" name="id">
+                        <td><input type="text" name="titulo" placeholder="Título del capítulo" value="##titulo##" class="form-control"></td>
+                        <td><input type="text" name="autor" placeholder="Autor" value="##autor##" class="form-control"></td>
+                        <td>
+                            <textarea class="form-control" name="texto">##texto##</textarea>
+                        </td>
+                        <td>
+                            <input type="submit" name="accion" class="btn btn-success btn-sm boton_guardar_capitulo" value="Guardar cambios">
+                            <input type="submit" class="btn btn-danger btn-sm boton_eliminar_capitulo" value="Eliminar capítulo">
+                        </td>
+                    </form>
+                </tr>
+                ##bloque capitulos##
+            </tbody>
+        </table>
+    </div>
+</div>

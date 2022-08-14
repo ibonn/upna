@@ -1,0 +1,10 @@
+/* CSS para personalizar la vista previad e la subida de imágenes */
+.dz-preview.dz-image-preview input {
+    margin-top: 10px;
+    font-size: 0.5em;
+}
+
+.dz-preview.dz-image-preview {
+    border: 1px solid #ced4da;
+    padding: 10px;
+}

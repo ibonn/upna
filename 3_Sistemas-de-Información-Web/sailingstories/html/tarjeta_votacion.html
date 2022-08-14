@@ -1,0 +1,19 @@
+<div class="card tarjeta_votacion">
+    <div class="card-body">
+        <h5 class="card-title">##titulo##</h5>
+        <p class="card-text">
+        ##texto##
+        </p>
+        <div class="progress mb-3">
+            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="" data-segundos="##segundos##" aria-valuemin="0" aria-valuemax="100">
+                <span class="sr-only"></span>
+            </div>
+        </div>
+        <p><small>Tiempo restante: <span class="cuenta_atras"></span></small></p>
+        <form action="ver_capitulo.php" method="POST">
+            <input type="hidden" name="id_capitulo" value="##id##">
+            <input type="submit" class="btn btn-success btn-xs" value="Votar">
+            <a href="ver_capitulo.php?id=##id##" class="btn btn-outline-primary btn-xs">Ver capítulo completo</a>
+        </form>
+    </div>
+</div>

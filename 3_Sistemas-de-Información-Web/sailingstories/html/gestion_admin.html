@@ -1,0 +1,40 @@
+<script src="js/dropzone.js"></script>
+<link rel="stylesheet" type="text/css" href="css/dropzone.css">
+<div class="content">
+  <div class="container">
+    <div id="subir_imagenes" class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">Crear administradores</h3>
+      </div>
+      <div class="card-body">
+        <form action="admin_json.php?accion=subir_csv" method="POST" id="subirImagenes" class="dropzone">
+            <div class="dz-message" data-dz-message><span>Arrastra un CSV con los datos de  los adminstradores que desees añadir</span></div>
+            <input type="hidden" name="id_historia" value="##id##">
+        </form>
+      </div>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+          ##bloque admins##
+          <tr>
+            <form>
+              <td>##id##</td>
+              <td>
+                  <div data-id="##id##">
+                    <input type="hidden" name="admin" value="##id##">
+                    <input type="submit" class="btn btn-danger btn-sm boton_eliminar_admin" value="Eliminar">
+                  </div>
+              </td>
+            </form>
+          </tr>
+          ##bloque admins##
+      </tbody>
+    </table>
+  </div>
+</div>

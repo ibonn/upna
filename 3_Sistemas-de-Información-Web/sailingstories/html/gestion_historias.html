@@ -1,0 +1,38 @@
+<div class="content">
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Temática</th>
+          <th>Introducción</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+          ##bloque historias##
+          <tr class="fila" data-id="##id##">
+            <form>
+              <input type="hidden" name="id_historia" value="##id##">
+              <td><input type="text" name="titulo_historia" class="form-control" value="##titulo##"></td>
+              <td>
+                <select name="genero_historia" class="form-control">
+                  ##bloque generos##
+                  <option>##nombre##</option>
+                  ##bloque generos##
+                </select>
+              </td>
+              <td>##intro##</td>
+              <td>
+                  <div data-id="##id##">
+                      <input type="submit" class="btn btn-success btn-sm boton_modificar_historia" value="Guardar cambios">
+                      <input type="submit" class="btn btn-danger btn-sm boton_eliminar_historia" value="Eliminar historia">
+                  </div>
+              </td>
+            </form>
+          </tr>
+          ##bloque historias##
+      </tbody>
+    </table>
+  </div>
+</div>

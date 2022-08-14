@@ -1,0 +1,53 @@
+<!-- TinyMCE -->
+<script src="https://cdn.tiny.cloud/1/l2lj09twf57mus8zravwx7wiibiw9j31qjp4elazshgq9bg0/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="js/dropzone.js"></script>
+<script defer src="js/init.js"></script>
+<link rel="stylesheet" type="text/css" href="css/dropzone.css">
+<script>
+  tinymce.init({
+    selector:"#editor_capitulo", 
+    entity_encoding: "raw"
+  });
+</script>
+<!-- Content Header (Page header) -->
+<div class="content-header">
+  <div class="container">
+    <h1 class="m-0 text-dark">Escribe una historia</h1>
+  </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<div class="content">
+  <div class="container"> 
+      <div class="card card-primary">
+        <div class="card-header">
+          <h3 class="card-title">Escribe el primer capítulo</h3>
+        </div>
+        <div class="card-body">
+          <form action="nueva_historia.php" method="POST">
+
+            <label for="titulo_capitulo">Título de la historia</label>
+            <input type="text" class="form-control" id="titulo_historia" name="titulo_historia" placeholder="Introduce un título para esta historia" autocomplete="off">
+
+            <label for="titulo_capitulo">Género</label>
+            <select name="genero_historia" class="form-control" id="selector_genero">
+              ##bloque generos##
+              <option>##nombre##</option>
+              ##bloque generos##
+            </select>
+
+            <label for="titulo_capitulo">Título del primer capítulo</label>
+            <input type="text" class="form-control" id="titulo_capitulo" name="titulo_capitulo" placeholder="Introduce un título para el primer capítulo" autocomplete="off">
+          
+            <label for="editor_capitulo">Texto del primer capítulo</label>
+            <textarea id="editor_capitulo" name="texto_capitulo"></textarea>
+            <input type="submit" class="btn btn-primary btn-sm" value="Enviar capítulo">
+            <input type="reset" class="btn btn-danger btn-sm" value="Reiniciar">
+          </form>
+        </div>
+      </div>
+    <!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+<!-- /.content -->

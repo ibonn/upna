@@ -1,0 +1,43 @@
+<script defer src="js/init.js"></script>
+<!-- Content Header (Page header) -->
+<div class="content-header">
+  <div class="container">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">##titulo_capitulo##</h1>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<div class="content">
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text">
+          ##texto##
+        </p>
+      </div>
+    </div>
+    <div class="card card-primary tarjeta_votacion">
+      <div class="card-header">
+        <h3 class="card-title">Vota este capítulo</h3>
+      </div>
+      <div class="card-body">
+        <p>Tiempo para finalizar la votación: <span class="cuenta_atras"></span></p>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-success" role="progressbar" aria-valuenow="" data-segundos="##segundos##" aria-valuemin="0" aria-valuemax="100">
+              <span class="sr-only"></span>
+          </div>
+      </div>
+        <form action="ver_capitulo.php" method="POST">
+          <input type="hidden" name="id_capitulo" value="##id##">
+          <input type="submit" class="btn btn-success" value="Votar">
+        </form>
+      </div>
+    </div>
+  </div><!-- /.container-fluid -->
+</div>
+<!-- /.content -->
