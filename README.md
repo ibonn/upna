@@ -10,3 +10,4 @@ Algunas de las prácticas/proyectos finales que he podido recuperar de mi paso p
 | 3 | ? | Arquitectura del software | Proyecto final de la asignatura. Aplicación de recomendación de recetas en base a ingredientes disponibles | Java | ? | ❓ |[Enlace](https://github.com/ibonn/ArqSoft)|
 | 4 | 2020 | Sistemas Multimedia y Diseño Centrado en el Usuario | Examen práctico | Processing | 9.5 | ✔️ |[Enlace](4_Sistemas-Multimedia-y-Diseño-Centrado-en-el-Usuario)|
 | 4 | 2020 | Gestión de Sistemas de la Información | Prácticas y proyecto final | Python | ? | ✔️ | [Prácticas](https://github.com/ibonn/240508)/[Proyecto final](https://github.com/amiirii/proyectoGSI)|
+| 4 | 2020 | Aplicaciones sobre Redes de Ordenadores | Proyecto final | Java | ? | ❓ | [Enlace](https://github.com/fermin16/Irunapp)|
