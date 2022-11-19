@@ -1,4 +1,4 @@
-# Prácticas del Grado en Ingenierína Informática - UPNA
+# Prácticas del Grado en Ingeniería Informática - UPNA
 
 Algunas de las prácticas/proyectos finales que he podido recuperar de mi paso por la carrera. Que se encuentren aquí no significa que estén bien aunque la mayoría funcionen, por lo que no es recomendable copiarlas. 
 | Curso | Año | Asignatura | Descripción | Lenguaje | Calificación | Funciona | Enlace |
